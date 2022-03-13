@@ -3,7 +3,6 @@ import { Suspense, lazy } from "react";
 import LoadingScreen from "../components/app/loading-screen";
 
 // icons :
-import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -17,6 +16,7 @@ const Loadable = (Component) => (props) =>
   );
 
 const Home = Loadable(lazy(() => import("../pages/home")));
+const AdView = Loadable(lazy(() => import("../pages/ad-view")));
 
 const navBarRoute = [
   {
@@ -45,7 +45,12 @@ const navBarRoute = [
   },
 ];
 
-const locationRoutes = [];
+const locationRoutes = [
+  {
+    path: "ad/:id",
+    element: <AdView />,
+  },
+];
 
 const routes = [...navBarRoute, ...locationRoutes];
 

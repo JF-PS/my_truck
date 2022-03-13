@@ -12,7 +12,7 @@ const NavBar = () => {
   const handleGoLocation = (path: string) => () => navigate(`/${path}`);
 
   return (
-    <Paper sx={{ width: "100%" }}>
+    <Paper sx={{ width: "100%", borderTop: "solid white 1px" }}>
       <BottomNavigation
         value={value}
         onChange={(event, newValue) => {

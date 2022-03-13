@@ -12,32 +12,50 @@ const initialState: any = {
     1: {
       id: 1,
       title: "Camion à négocier",
+      description: `Lorem ipsum dolor sit amet. Eos maiores perferendis eos delectus 
+      quidem non quaerat modi aut fugit consequatur. Qui voluptas autem sed illo doloremque 
+      non autem optio sed dolores odio nam fugiat temporibus vel debitis fugiat. Ex impedit 
+      iure et corporis ipsum quo omnis sequi sit repellendus Quis rem sunt incidunt sed 
+      minima unde. Aut praesentium repellat quo dignissimos iure quo minima dolores et adipisci 
+      tempora qui laboriosam officia.`,
       vehicle_id: 1,
       user_id: 1,
       add_type_id: 1,
       adress: "",
       price: 15623.54,
-      picture: "",
+      picture_id: 1,
     },
     2: {
       id: 2,
-      title: "Camion tout neuf",
+      title: "Caisse tout neuf",
+      description: `Lorem ipsum dolor sit amet. Eos maiores perferendis eos delectus 
+      quidem non quaerat modi aut fugit consequatur. Qui voluptas autem sed illo doloremque 
+      non autem optio sed dolores odio nam fugiat temporibus vel debitis fugiat. Ex impedit 
+      iure et corporis ipsum quo omnis sequi sit repellendus Quis rem sunt incidunt sed 
+      minima unde. Aut praesentium repellat quo dignissimos iure quo minima dolores et adipisci 
+      tempora qui laboriosam officia.`,
       vehicle_id: 2,
       user_id: 1,
-      add_type_id: 1,
+      add_type_id: 2,
       adress: "",
       price: 15623.54,
-      picture: "",
+      picture_id: 6,
     },
     3: {
       id: 3,
-      title: "Vannes aménager",
+      title: "Vieu Camping Car",
+      description: `Lorem ipsum dolor sit amet. Eos maiores perferendis eos delectus 
+      quidem non quaerat modi aut fugit consequatur. Qui voluptas autem sed illo doloremque 
+      non autem optio sed dolores odio nam fugiat temporibus vel debitis fugiat. Ex impedit 
+      iure et corporis ipsum quo omnis sequi sit repellendus Quis rem sunt incidunt sed 
+      minima unde. Aut praesentium repellat quo dignissimos iure quo minima dolores et adipisci 
+      tempora qui laboriosam officia.`,
       vehicle_id: 3,
       user_id: 1,
       add_type_id: 1,
       adress: "",
       price: 15623.54,
-      picture: "",
+      picture_id: 11,
     },
   },
 };
