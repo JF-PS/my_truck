@@ -19,6 +19,14 @@ const yellowButton = {
   justifyContent: "center",
 };
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *  <ActionCard picture="hyyps://mypicture.jpg" description="blablablabla"  />
+ * ```
+ */
+
 const SaleCard = (props) => {
   const { picture, description } = props;
   return (

@@ -26,6 +26,15 @@ const selector = createSelector(
   })
 );
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *  <Ad adId={1}  />
+ *
+ * ```
+ */
 const Ad = (props) => {
   const {
     ads = {},

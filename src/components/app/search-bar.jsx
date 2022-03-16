@@ -8,9 +8,18 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-
 import Box from "@mui/material/Box";
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *  const [value, setValue] = useState("Camion");
+ *  <SearchBar />
+ *
+ * ```
+ */
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
 

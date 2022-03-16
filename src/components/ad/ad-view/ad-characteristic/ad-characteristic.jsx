@@ -45,6 +45,15 @@ const selector = createSelector(
   })
 );
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *  <AdCharacteristic id={1}  />
+ *
+ * ```
+ */
 const AdCharacteristic = (props) => {
   const { id } = props;
 

@@ -11,6 +11,16 @@ const selector = createSelector([(state) => state.ad.ads.byId], (ads) => ({
   ads,
 }));
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *  <AdDescription id={1}  />
+ *
+ * ```
+ */
+
 const AdDescription = (props) => {
   const { id } = props;
   const { ads = {} } = useSelector(selector);

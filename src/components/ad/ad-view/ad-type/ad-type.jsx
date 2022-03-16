@@ -14,6 +14,16 @@ const selector = createSelector(
   })
 );
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *
+ *  <AdType id={1} id={id}  />
+ *
+ * ```
+ */
 const AdType = (props) => {
   const { id } = props;
   const { ads = {}, adsType = {} } = useSelector(selector);

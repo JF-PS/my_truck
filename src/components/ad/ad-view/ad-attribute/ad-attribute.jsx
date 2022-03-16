@@ -19,6 +19,15 @@ const selector = createSelector(
   })
 );
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *  <AdAttribute id={1}  />
+ *
+ * ```
+ */
 const AdAttribute = (props) => {
   const { id } = props;
   const { ads = {}, horsepowers = {}, vehicles = {} } = useSelector(selector);

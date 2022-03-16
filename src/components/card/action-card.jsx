@@ -1,5 +1,16 @@
 import { Box, Typography } from "@mui/material";
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *
+ *  <ActionCard icon={<Icon />} label="label"  />
+ *
+ * ```
+ */
+
 const ActionCard = (props) => {
   const { icon, label } = props;
   return (

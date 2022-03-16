@@ -26,6 +26,20 @@ const imgStyle = {
   borderRadius: "4px",
 };
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ * const handleClickPicture = (pictureClick) => {
+ *  setSelectPicture(pictureClick)
+ * }
+ *
+ *  <AdDescription id={1} selectPicture="https://mypicture.jpg" handleClickPicture={handleClickPicture}  />
+ *
+ * ```
+ */
+
 const AdPictures = (props) => {
   const { selectPicture, handleClickPicture, id } = props;
   const { pictures = {} } = useSelector(selector);

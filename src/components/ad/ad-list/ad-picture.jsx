@@ -6,6 +6,16 @@ const imgStyle = {
   transform: "translateX(-50%)",
 };
 
+/**
+ *
+ * ## Usage
+ * ```jsx
+ *
+ *  <AddPicture picture="https://mypicture.jpg"  />
+ *
+ * ```
+ */
+
 const AddPicture = (props) => {
   const { picture } = props;
   return <img style={imgStyle} src={picture} alt="camion" />;
