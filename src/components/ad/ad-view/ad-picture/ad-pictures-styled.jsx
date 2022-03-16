@@ -5,7 +5,7 @@ const AdPicturesStyled = styled(ColBox)({
   /**
    * Ad Image Box :
    **/
-  "& > div:nth-child(1)": {
+  "& > div:nth-of-type(1)": {
     backgroundColor: "#3F3979",
     padding: "8px",
     borderRadius: "8px",
@@ -19,7 +19,7 @@ const AdPicturesStyled = styled(ColBox)({
   /**
    * Caroussel Box :
    **/
-  "& > div:nth-child(2)": {
+  "& > div:nth-of-type(2)": {
     width: "100%",
     marginTop: "8px",
   },
