@@ -8,6 +8,18 @@ export default function createReducer(listName, listState, customMethods = {}) {
       state[listName].isLoading = value;
     },
 
+    setValue(state, action) {
+      const { key, value } = action.payload;
+      const path = key.split(".");
+      if (path.length > 1) {
+        let obj = state[listName];
+        while (path.length > 1) obj = obj[path.shift()];
+        obj[path[0]] = value;
+      } else {
+        state[listName][key] = value;
+      }
+    },
+
     reset(state) {
       state[listName] = cloneDeep(listState);
     },

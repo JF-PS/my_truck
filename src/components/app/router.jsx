@@ -6,7 +6,9 @@ const Router = () => {
     <Routes>
       {routes.map((route, index) => {
         const { path, element } = route;
-        return <Route key={index} path={path} element={element} />;
+        return (
+          <Route key={index} path={path} element={element} test={"test"} />
+        );
       })}
     </Routes>
   );

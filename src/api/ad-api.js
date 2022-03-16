@@ -6,7 +6,7 @@ export const adApi = {
     return fetchApi(`ads/${id}`);
   },
   getMultiple: async (input) => {
-    const { limit, offset } = input;
-    return fetchApi(`ads/${limit}/${offset}`);
+    const { limit = 5, offset = 0, title = "" } = input;
+    return fetchApi(`ads/${limit}/${offset}?title=${title}`);
   },
 };

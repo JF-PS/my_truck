@@ -11,6 +11,7 @@ import { reducer as modelSlice } from "../slices/model-slice";
 import { reducer as horsepowerSlice } from "../slices/horsepower-slice";
 import { reducer as stateSlice } from "../slices/state-slice";
 import { reducer as gasSlice } from "../slices/gas-slice";
+import { reducer as appSlice } from "../slices/app-slice";
 
 const rootReducer = combineReducers({
   ad: adSlice,
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   horsepower: horsepowerSlice,
   state: stateSlice,
   gas: gasSlice,
+  app: appSlice,
 });
 
 export default rootReducer;

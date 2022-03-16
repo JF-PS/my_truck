@@ -10,4 +10,5 @@ const App = () => (
     <NavBar />
   </AppBox>
 );
+
 export default App;
