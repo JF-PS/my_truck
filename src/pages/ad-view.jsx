@@ -1,7 +1,19 @@
-import { useMemo, useState } from "react";
-import { useSelector, createSelector } from "../store/store";
+import { useEffect, useMemo, useState } from "react";
+import { isEmpty } from "lodash";
+import { createSelector } from "@reduxjs/toolkit";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Typography } from "@mui/material";
+import { getAdById } from "../slices/ad-slice";
+
+import { loadVehicleType } from "../slices/vehicle-type-slice";
+import { loadVehicle } from "../slices/vehicle-slice";
+import { loadModel } from "../slices/model-slice";
+import { loadHorsepower } from "../slices/horsepower-slice";
+import { loadCategory } from "../slices/category-slice";
+import { loadBrand } from "../slices/brand-slice";
+import { loadAdType } from "../slices/ad-type-slice";
+import { loadPictures } from "../slices/ad-picture-slice";
 
 import ColBox from "../components/styled/column-box";
 import Layout from "../components/layout";
@@ -12,8 +24,8 @@ import AdAttribute from "../components/ad/ad-view/ad-attribute/ad-attribute";
 import AdType from "../components/ad/ad-view/ad-type/ad-type";
 
 const selector = createSelector(
-  [(state) => state.ad.byId, (state) => state.adPicture.byId],
-  (ads, adsType, pictures) => ({
+  [(state) => state.ad.ads.byId, (state) => state.adPicture.adPictures.byId],
+  (ads, pictures) => ({
     ads,
     pictures,
   })
@@ -30,10 +42,42 @@ const TypographySx = {
 const AdView = () => {
   const { id } = useParams();
   const { ads = {} } = useSelector(selector);
+  const dispatch = useDispatch();
 
-  const { title = "", picture_id } = useMemo(() => ads[id], [ads, id]);
+  useEffect(() => {
+    const items = dispatch(getAdById({ id }));
+    items.then((response) => {
+      const {
+        AdPictures,
+        type,
+        vehicle,
+        brand,
+        category,
+        horsepower,
+        serialNumber,
+        subCategory,
+      } = response;
+      dispatch(loadVehicleType(subCategory));
+      dispatch(loadVehicle(vehicle));
+      dispatch(loadModel(serialNumber));
+      dispatch(loadHorsepower(horsepower));
+      dispatch(loadCategory(category));
+      dispatch(loadBrand(brand));
+      dispatch(loadAdType(type));
+      dispatch(loadPictures(AdPictures));
+    });
+  }, [dispatch, id]);
 
-  const [selectPicture, setSelectPicture] = useState(picture_id);
+  const { title = "", picture_id } = useMemo(() => {
+    if (!isEmpty(ads[id])) return ads[id];
+    return {};
+  }, [ads, id]);
+
+  const [selectPicture, setSelectPicture] = useState();
+
+  useEffect(() => {
+    setSelectPicture(picture_id);
+  }, [picture_id]);
 
   const handleClickPicture = (idPicture) => () => {
     setSelectPicture(idPicture);
